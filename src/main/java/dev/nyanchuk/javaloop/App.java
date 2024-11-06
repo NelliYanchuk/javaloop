@@ -1,5 +1,6 @@
 package dev.nyanchuk.javaloop;
 
+import java.util.List;
 import java.util.Scanner;
 
 public final class App {
@@ -7,13 +8,15 @@ public final class App {
     }
 
     public static void main(String[] args) {
-        int num;
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter a number to get its multiplication table");
-        num = scanner.nextInt();
+        System.out.print("\nEnter a number to get its multiplication table: ");
+        String input = scanner.nextLine();
+        List<String> table = Table.setTable(input, scanner);
 
-        Table.setTable(num, scanner);
+        for (String line : table) {
+            System.out.println(line);
+        }
 
         scanner.close();
     }
