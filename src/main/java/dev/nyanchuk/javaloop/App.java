@@ -1,17 +1,20 @@
 package dev.nyanchuk.javaloop;
 
-/**
- * Hello world!
- */
+import java.util.Scanner;
+
 public final class App {
     private App() {
     }
 
-    /**
-     * Says hello to the world.
-     * @param args The arguments of the program.
-     */
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        int num;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter a number to get its multiplication table");
+        num = scanner.nextInt();
+
+        Table.setTable(num, scanner);
+
+        scanner.close();
     }
 }
